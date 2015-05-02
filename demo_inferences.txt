@@ -1,0 +1,45 @@
+Observations and Inferences:
+
+*	VARYING k:
+
+1.	k increases, the error rate of classification increases.
+	Most of the labels are classified as the majority labels in the training data.
+
+2	K increases, the Decision boundary is more smoother.
+	A decision boundary is the region of a problem space in which the output label of a classifier is ambiguous, as k increases the transition from one class to 
+	another class is not abrupt
+	which results in smoother decision boundary.
+
+*	VARYING m:
+
+3.	In class it was shown that KNN is close to optimal error rate (Bayes optimal error rate). Bayes optimal classifier is our best bet in classification.
+	Asymptotically, the error rate of 1-nearest-neighbor classification is less than twice the Bayes rate.
+
+	R* <= R <= 2R*   ,where R* = optimal error rate, R = Nearest neighbour error rate
+
+	Reason :Both query point and training point contribute error → 2 times Bayes rate 
+
+	This can be observed from the demo, if k = 1 and Sample size(m) tends to infinity (Maximum allowed in the site is 2000), this yield a error rate of 3.03125%
+	On increasing sample size further the error rate decreases, at around m = 30,000, the error rate is 0%. (Point mentioned in interestion extreme cases in Sir's 
+	slide)
+
+
+4.	As m -> infinity, Bayes optimal error -> zero,
+	The error rate R is thus sandwiched between two quantities tending to zero.
+	This explains the asymptotic nature of Error rate tending to zero.
+
+5.	At low m and low k, the KNN model suffers very high error rate.
+	Data from demo:- m = 30 , k = 5, Error rate = 24.17% (Field size = 80 , Complexitiy = 5) at a particular topology
+
+
+*	Extra Observations from Demo:
+
+6.	At sufficiently high m, the error rate is still affected drastically by increase in k.
+	Increase in error yields increase in error rate , even as m-> infinity.
+
+	This can be verified from the formula for the finite k misclassification error rate
+
+	0 <= R* <= R(2k+1)NN <= R(2k-1)NN <=2R*    where R(kNN) is the limiting value of misclassification rate of KNN as m-> infinity
+
+7.	The error rate of the model depends on the position of data points in the Feature Space of KNN.
+	Data from demo:- Keep other parameters constant, at two different topology the model suffers different error rate
